@@ -1,0 +1,63 @@
+/* Find a sorted sequence of characters from a two unsorted character array. 
+Both the chracers should be merged and sorted into a new array with ascending order. 
+Multiple frequency characters should be considered as single occurence
+*/
+package Test;
+
+import java.io.*;
+import java.util.*;
+
+public class SortCharArr {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		final int LIMIT = 5;
+		String input1;
+		Scanner sc= new Scanner(System.in);
+		char arr1[]=new char[5];
+		System.out.println("enter the char within length 5(excees will be truncated)");
+		input1=sc.next();
+		if (input1.length()> LIMIT)
+		{
+			input1=input1.substring(0,LIMIT);
+		}
+		input1=input1.toLowerCase();
+		
+		//Converting string into character
+		arr1=input1.toCharArray();
+		
+			
+		String input2;
+		char arr2[] = new char[5];
+		System.out.println("enter the char within length 5(excees will be truncated)");
+		input2 = sc.next();
+		if (input2.length()> LIMIT)
+		{
+			input2=input2.substring(0,LIMIT);
+		}
+		input2=input2.toLowerCase();
+		
+		//Converting string into character
+		arr2=input2.toCharArray();
+		
+		Set<Character> s1=new TreeSet<>();
+		Set<Character> s2=new TreeSet<>();
+		 for (int i = 0; i < arr1.length; i++) {
+		          s1.add(arr1[i]);
+		      }
+		 for (int i = 0; i < arr2.length; i++) {
+		          s2.add(arr2[i]);
+		      }
+		 
+		// TreeSet has the inbuild property of sorting
+		Set<Character> result=new TreeSet<>();
+		// For joining the two sets.
+		result.addAll(s1);
+		result.addAll(s2);
+		
+		// For displaying the output
+		for(char out:result)
+		System.out.print(out);
+		
+		}
+		}
